@@ -1814,6 +1814,15 @@ div.content {
     padding: 0 0 5px 5px; }
     #conversejs #controlbox form.search-xmpp-contact input {
       width: 8em; }
+  #conversejs #controlbox .msgs-indicator {
+    opacity: 0.6;
+    background-color: #D24E2B;
+    color: white;
+    font-size: 14px;
+    float: right;
+    font-weight: normal;
+    padding: 0 4px;
+    text-shadow: none; }
   #conversejs #controlbox a.subscribe-to-user {
     padding-left: 2em;
     font-weight: bold; }
@@ -1898,6 +1907,10 @@ div.content {
         word-wrap: break-word; }
         #conversejs #controlbox #chatrooms .rooms-list-container dl.rooms-list dd.available-chatroom:hover {
           background-color: #DCF9F6; }
+        #conversejs #controlbox #chatrooms .rooms-list-container dl.rooms-list dd.available-chatroom.unread-msgs .open-room {
+          max-width: 50%;
+          width: auto;
+          font-weight: bold; }
         #conversejs #controlbox #chatrooms .rooms-list-container dl.rooms-list dd.available-chatroom a.room-info:before {
           font-size: 15px; }
         #conversejs #controlbox #chatrooms .rooms-list-container dl.rooms-list dd.available-chatroom a.open-room {
@@ -1988,8 +2001,16 @@ div.content {
         margin: 0;
         text-align: center;
         text-decoration: none; }
+        #conversejs #controlbox #controlbox-tabs li a.contacts-tab .msgs-indicator {
+          background-color: #F4A261; }
+        #conversejs #controlbox #controlbox-tabs li a.rooms-tab .msgs-indicator {
+          background-color: #E76F51; }
+        #conversejs #controlbox #controlbox-tabs li a .msgs-indicator {
+          border-top-right-radius: 0; }
         #conversejs #controlbox #controlbox-tabs li a:hover {
           color: #818479; }
+          #conversejs #controlbox #controlbox-tabs li a:hover .msgs-indicator {
+            opacity: 0.8; }
         #conversejs #controlbox #controlbox-tabs li a.current, #conversejs #controlbox #controlbox-tabs li a.current:hover {
           box-shadow: none;
           border-bottom: 0;
@@ -2269,84 +2290,10 @@ div.content {
             opacity: 0; }
           #conversejs #converse-roster .roster-contacts dd .open-chat.unread-msgs .avatar.avatar-online .pulse {
             border: 0.7em solid #587BDD; }
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(0);
-    opacity: 0.0; }
-  25% {
-    -webkit-transform: scale(0);
-    opacity: 0.1; }
-  50% {
-    -webkit-transform: scale(0.1);
-    opacity: 0.3; }
-  75% {
-    -webkit-transform: scale(0.5);
-    opacity: 0.5; }
-  100% {
-    -webkit-transform: scale(1);
-    opacity: 0.0; } }
-@-moz-keyframes pulse {
-  0% {
-    -moz-transform: scale(0);
-    opacity: 0.0; }
-  25% {
-    -moz-transform: scale(0);
-    opacity: 0.1; }
-  50% {
-    -moz-transform: scale(0.1);
-    opacity: 0.3; }
-  75% {
-    -moz-transform: scale(0.5);
-    opacity: 0.5; }
-  100% {
-    -moz-transform: scale(1);
-    opacity: 0.0; } }
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    opacity: 0.0; }
-  25% {
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    opacity: 0.1; }
-  50% {
-    -webkit-transform: scale(0.1);
-    -moz-transform: scale(0.1);
-    -ms-transform: scale(0.1);
-    -o-transform: scale(0.1);
-    transform: scale(0.1);
-    opacity: 0.3; }
-  75% {
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform: scale(0.5);
-    opacity: 0.5; }
-  100% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 0.0; } }
-        #conversejs #converse-roster .roster-contacts dd .open-chat .msgs-indicactor {
-          background-color: #D24E2B;
-          color: white;
-          border-radius: 10%;
-          float: right;
-          font-size: 11px;
+        #conversejs #converse-roster .roster-contacts dd .open-chat .msgs-indicator {
+          opacity: 1;
           margin-left: -3em;
-          font-weight: normal;
-          padding: 0 4px;
-          text-shadow: none; }
+          border-radius: 10%; }
         #conversejs #converse-roster .roster-contacts dd .open-chat .contact-name {
           padding: 0;
           margin: 0;
