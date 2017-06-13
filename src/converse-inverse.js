@@ -57,13 +57,30 @@
 
                 renderContactsPanel: function () {
                     this.__super__.renderContactsPanel.apply(this, arguments);
-                    this.$el.removeClass("fullscreen");
+                    this.el.classList.remove("fullscreen");
+                    return this;
+                },
+
+                renderRegistrationPanel: function () {
+                    this.__super__.renderRegistrationPanel.apply(this, arguments);
+
+                    // TODO: put into template
+                    var div = document.createElement('div');
+                    div.innerHTML = '<h1 class="brand-heading"><i class="icon-conversejs"></i> inVerse</h1>';
+                    var el = document.getElementById('converse-register');
+                    el.parentNode.insertBefore(div.firstChild, el);
                     return this;
                 },
 
                 renderLoginPanel: function () {
                     this.__super__.renderLoginPanel.apply(this, arguments);
-                    this.$el.addClass("fullscreen");
+                    this.el.classList.add("fullscreen");
+
+                    // TODO: put into template
+                    var div = document.createElement('div');
+                    div.innerHTML = '<h1 class="brand-heading"><i class="icon-conversejs"></i> inVerse</h1>';
+                    var el = document.getElementById('converse-login');
+                    el.parentNode.insertBefore(div.firstChild, el);
                     return this;
                 }
             },
@@ -85,6 +102,7 @@
             var _converse = this._converse;
 
             this.updateSettings({
+                sticky_controlbox: true,
                 sounds_path: '/node_modules/converse.js/sounds/', // New default
                 notification_icon: '/node_modules/converse.js/logo/conversejs128.png', // New default
             });
